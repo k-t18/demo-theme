@@ -9,7 +9,7 @@ export default function Canvas(props: any) {
       {props?.components?.length > 0 &&
         props?.components?.map((prop: any) => {
           return (
-            <div style={{ width: '580px' }}>
+            <div>
               <h3>{prop}</h3>
             </div>
           );

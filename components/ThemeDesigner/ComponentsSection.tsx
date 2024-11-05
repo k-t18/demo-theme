@@ -1,16 +1,34 @@
-import React from 'react';
-import { useDraggable } from '@dnd-kit/core';
-import { CSS } from '@dnd-kit/utilities';
-
 export default function ComponentsSection(props: any) {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: props.children,
-    data: { title: props.children },
-  });
+  const componentsList = [
+    'Header',
+    'Banners',
+    'Personlized Categories',
+    'Featured Collection',
+    'Brands',
+    'Subscription',
+    'CTA Banners',
+    'Client Testimonials',
+    'Recently Viewed Products',
+    'Filters',
+    'Product Card',
+    'Products List',
+    'Pagination',
+    'Footer',
+  ];
 
   return (
-    <div ref={setNodeRef} style={{ transform: CSS.Translate.toString(transform) }} {...attributes} {...listeners}>
-      {props.children}
+    <div className="overflow-y-auto">
+      <div className="d-flex flex-column mb-3">
+        {componentsList?.map((component: string) => {
+          return (
+            <div className=" mb-3">
+              <button type="button" className="btn">
+                {component}
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
