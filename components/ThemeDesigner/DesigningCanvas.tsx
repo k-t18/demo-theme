@@ -1,19 +1,20 @@
 import { useDroppable } from '@dnd-kit/core';
-
-export default function Canvas(props: any) {
-  const { setNodeRef } = useDroppable({
-    id: 'components-droppable',
-  });
+import Image from 'next/image';
+export default function Canvas({ selectedComponentsList }: any) {
+  const imageLoader = ({ src, width, quality }: any) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
+  };
   return (
-    <div ref={setNodeRef}>
-      {props?.components?.length > 0 &&
-        props?.components?.map((prop: any) => {
-          return (
-            <div>
-              <h3>{prop}</h3>
-            </div>
-          );
-        })}
+    <div>
+      {selectedComponentsList?.length !== 0 ? (
+        <div>
+          {selectedComponentsList?.map((component: any) => {
+            return <Image loader={imageLoader} src={component?.imgLink} alt="component-img" width={680} height={382} />;
+          })}
+        </div>
+      ) : (
+        'Start Designing your site today!'
+      )}
     </div>
   );
 }

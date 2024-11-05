@@ -1,4 +1,10 @@
-export default function ComponentsSection(props: any) {
+import themeDesignerComponentsStyles from '../../styles/components/themeDesignerComponents.module.scss';
+
+type ComponentsProps = {
+  ctaOnItemClick: (value: string) => void;
+};
+
+export default function ComponentsSection({ ctaOnItemClick }: ComponentsProps) {
   const componentsList = [
     'Header',
     'Banners',
@@ -14,20 +20,31 @@ export default function ComponentsSection(props: any) {
     'Products List',
     'Pagination',
     'Footer',
+    'Contact',
+    'Gallery',
+    'Intro',
+    'Services',
+    'Services',
+    'Services',
+    'Services',
+    'Services',
+    'Services',
+    'Services',
+    'Services',
   ];
 
   return (
-    <div className="overflow-y-auto">
-      <div className="d-flex flex-column mb-3">
-        {componentsList?.map((component: string) => {
-          return (
-            <div className=" mb-3">
-              <button type="button" className="btn">
-                {component}
-              </button>
-            </div>
-          );
-        })}
+    <div className={``}>
+      <div className={``}>
+        <ul className="list-unstyled" style={{ fontSize: '14px' }}>
+          {componentsList?.map((componentName: string) => {
+            return (
+              <li className={`mb-3 ${themeDesignerComponentsStyles.cursor}`} onClick={() => ctaOnItemClick(componentName)}>
+                {componentName}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
