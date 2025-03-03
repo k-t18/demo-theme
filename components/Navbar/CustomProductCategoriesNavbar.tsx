@@ -96,7 +96,7 @@ function CustomProductCategoriesNavbar({
     if (isLoading) {
       return <h4>Loading</h4>;
     }
-    if (navbarData?.length > 0 && navbarData[0]?.values?.length > 0) {
+    if (navbarData?.length > 0 && navbarData[0]?.values && navbarData[0]?.values?.length > 0) {
       return (
         <header>
           <nav ref={ref} className="w-100 position-relative">
