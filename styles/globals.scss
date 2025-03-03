@@ -254,6 +254,9 @@ input[type='text'] {
 .navbar_category {
   text-align: right !important;
   color: #cd8825 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .carousel_styles .react-multi-carousel-track {
