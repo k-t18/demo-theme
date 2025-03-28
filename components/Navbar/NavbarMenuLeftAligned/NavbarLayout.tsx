@@ -37,7 +37,6 @@ function LogoInCenterNavbar({
       router.push('/product/' + searchTerm);
     }
   };
-  console.log(isSidebarOpen, 'data111');
   const handleCloseSidebar = () => setIsSidebarOpen(false);
   const handleShowDropDown = () => setShowDropDown(!showDropDown);
   const handleToggle = (e: any) => {
