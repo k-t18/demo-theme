@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Overlay, Placeholder, Popover } from 'react-bootstrap';
+import { useEffect, useRef, useState } from 'react';
+import { Placeholder, Popover } from 'react-bootstrap';
 import stylesHeader from '../../styles/components/header.module.scss';
 
 function CustomProductCategoriesNavbar({
@@ -36,13 +36,9 @@ function CustomProductCategoriesNavbar({
       id={`popover-${item.label}`}
       className={`p-2 ${stylesHeader.category_popover} shadow rounded`}
       style={{
-        // maxWidth: '900px', // Maximum width for responsiveness
         width: '100vw', // Full width for smaller screens
         position: 'absolute',
-        // top: '100%', // Position below the nav bar
         left: '25%', // Center horizontally
-        // transform: 'translateX(1%)', // Center alignment
-        // zIndex: 1050, // Ensure it's above other elements
       }}
     >
       <div className="row">

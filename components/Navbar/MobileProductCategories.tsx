@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, Offcanvas } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
-import { FiCommand } from 'react-icons/fi';
 import logo from '../../public/assets/images/logo.png';
 
 const MobileProductCategories = ({
@@ -70,7 +69,7 @@ const MobileProductCategories = ({
                                         key={indexL3}
                                         href={{ pathname: `${itemL3?.url}`, query: { page: '1', currency: 'INR' } }}
                                         className="text-decoration-none text-dark"
-                                        // onClick={() => setIsSidebarOpen(false)}
+                                        onClick={() => setIsSidebarOpen(false)}
                                       >
                                         <p className="px-3  py-3  m-0 border-bottom">{itemL3?.label}</p>
                                       </Link>
