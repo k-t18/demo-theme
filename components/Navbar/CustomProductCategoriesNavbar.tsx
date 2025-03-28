@@ -36,13 +36,13 @@ function CustomProductCategoriesNavbar({
       id={`popover-${item.label}`}
       className={`p-2 ${stylesHeader.category_popover} shadow rounded`}
       style={{
-        maxWidth: '900px', // Maximum width for responsiveness
-        width: '100%', // Full width for smaller screens
+        // maxWidth: '900px', // Maximum width for responsiveness
+        width: '100vw', // Full width for smaller screens
         position: 'absolute',
-        top: '100%', // Position below the nav bar
-        left: '50%', // Center horizontally
-        transform: 'translateX(-50%)', // Center alignment
-        zIndex: 1050, // Ensure it's above other elements
+        // top: '100%', // Position below the nav bar
+        left: '25%', // Center horizontally
+        // transform: 'translateX(1%)', // Center alignment
+        // zIndex: 1050, // Ensure it's above other elements
       }}
     >
       <div className="row">

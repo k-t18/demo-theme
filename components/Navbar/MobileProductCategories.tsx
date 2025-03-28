@@ -70,7 +70,7 @@ const MobileProductCategories = ({
                                         key={indexL3}
                                         href={{ pathname: `${itemL3?.url}`, query: { page: '1', currency: 'INR' } }}
                                         className="text-decoration-none text-dark"
-                                        onClick={() => setIsSidebarOpen(false)}
+                                        // onClick={() => setIsSidebarOpen(false)}
                                       >
                                         <p className="px-3  py-3  m-0 border-bottom">{itemL3?.label}</p>
                                       </Link>
