@@ -6,8 +6,6 @@ interface LayoutProps {
   componentProps?: any; // Define this properly if you know the structure
 }
 function Layout({ children, componentProps }: LayoutProps) {
-  console.log('props', componentProps);
-  console.log('sasa');
   const router = useRouter();
   const toShowHeader =
     router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/forgot_password' ? false : true;
@@ -21,7 +19,7 @@ function Layout({ children, componentProps }: LayoutProps) {
   };
   const FooterRenderer = () => {
     const Component = require(`./Footer/${layoutData?.data.footer_component}/MasterComponent`).default;
-    return <Component key="navbar-component" />;
+    return <Component key="footer-component" />;
   };
 
   return (
