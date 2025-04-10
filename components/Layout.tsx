@@ -9,6 +9,7 @@ function Layout({ children, componentProps }: LayoutProps) {
   const router = useRouter();
   const toShowHeader =
     router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/forgot_password' ? false : true;
+
   const toShowFooter =
     router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/forgot_password' ? false : true;
 
@@ -20,11 +21,12 @@ function Layout({ children, componentProps }: LayoutProps) {
     const Component = require(`./Footer/${layoutData?.data.footer_component}/MasterComponent`).default;
     return <Component key="footer-component" />;
   };
+
   return (
     <>
-      {toShowHeader && HeaderRenderer()}
+      {toShowHeader && <HeaderRenderer />}
       {children}
-      {FooterRenderer()}
+      {toShowFooter && <FooterRenderer />}
     </>
   );
 }
