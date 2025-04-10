@@ -36,9 +36,16 @@ function CustomProductCategoriesNavbar({
       id={`popover-${item.label}`}
       className={`p-2 ${stylesHeader.category_popover} shadow rounded`}
       style={{
-        width: '100vw', // Full width for smaller screens
+        maxWidth: '900px', // Maximum width for responsiveness
+        width: '100%', // Full width for smaller screens
+        width: '100% ', // Full width for smaller screens
         position: 'absolute',
-        left: '25%', // Center horizontally
+        top: '100%', // Position below the nav bar
+        left: '50%', // Center horizontally
+        transform: 'translateX(-50%)', // Center alignment
+        // left: '50%', // Center horizontally
+        // transform: 'translateX(-50%)', // Center alignment
+        zIndex: 1050, // Ensure it's above other elements
       }}
     >
       <div className="row">
@@ -92,7 +99,7 @@ function CustomProductCategoriesNavbar({
     if (isLoading) {
       return <h4>Loading</h4>;
     }
-    if (navbarData?.length > 0) {
+    if (navbarData?.length > 0 && navbarData[0]?.values && navbarData[0]?.values?.length > 0) {
       return (
         <header>
           <nav ref={ref} className="w-100 position-relative">
@@ -100,7 +107,7 @@ function CustomProductCategoriesNavbar({
               <div className="row w-100 d-flex justify-content-around">
                 <div className="col-xl-10 col-lg-12">
                   <div className="d-flex">
-                    {navbarData?.map((item: any, index: number) => (
+                    {navbarData[0]?.values?.map((item: any, index: number) => (
                       <div key={index} className="cursor-pointer">
                         {navbarData === null ? (
                           <Placeholder xs={6} bg="dark" />
