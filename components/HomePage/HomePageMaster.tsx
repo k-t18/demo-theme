@@ -1,8 +1,18 @@
+import { io } from 'socket.io-client';
 import flattenComponentsList from '../../utils/handle-components-list';
+import { useEffect } from 'react';
 
 //refer to components-interface.ts inside interface folder for home page components understanding
 
 const HomePageMaster = ({ homePageComponents, bannerData }: any) => {
+  const clientSocketInstance = io('http://localhost:3008');
+
+  useEffect(() => {
+    clientSocketInstance.on('connect', () => {
+      console.log(clientSocketInstance.id);
+    });
+    clientSocketInstance.emit('summit', 'event from summit');
+  }, []);
   const componentsListFlattenArray = flattenComponentsList(homePageComponents);
   if (Object.keys(homePageComponents)?.length === 0) {
     return <p>No components to display for the home page.</p>;
@@ -14,9 +24,9 @@ const HomePageMaster = ({ homePageComponents, bannerData }: any) => {
     if (componentName?.section_name === 'BannerSection') {
       return <Component key={componentName?.component_name} bannerData={bannerData} />;
     }
-    if (componentName?.section_name === 'FeaturedCollections') {
-      return <Component key={componentName?.component_name} componentProperties={JSON.parse(componentName?.properties)} />;
-    }
+    // if (componentName?.section_name === 'FeaturedCollections') {
+    //   return <Component key={componentName?.component_name} componentProperties={JSON.parse(componentName?.properties)} />;
+    // }
     return <Component key={componentName?.component_name} />;
   });
   return <>{componentsToRender}</>;
