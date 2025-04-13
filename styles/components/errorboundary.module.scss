@@ -1,14 +1,12 @@
-.error_page {
-  width: 100vw !important;
-  min-height: 100vh !important;
+#error_page {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
-  margin: auto !important;
-  padding: 0px 8px;
-  box-sizing: border-box;
-  height: 100% !important;
 }
 .error_content {
   display: flex;
@@ -40,6 +38,7 @@
   text-transform: capitalize;
   color: #000;
   font-size: 2em;
+  max-width: 600px;
   position: relative;
   font-weight: 700;
 }
@@ -55,6 +54,7 @@
 }
 .error_content p {
   font-size: 16px;
+  // color: #0d0d0d;
 }
 .error_content .error_btns {
   margin: 25px 0;
@@ -77,51 +77,27 @@
   background: #63bce7;
   color: #fff;
 }
-.error_button_text {
-  width: 110px !important;
-  height: 34px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .error_button {
   background-color: #7c8281 !important;
-  // padding: 10px 20px !important;
-  padding: 5px 20px !important;
+  padding: 10px 20px !important;
+  width: 154px !important;
+  height: 52px !important;
   border: none !important;
-  // font-size: 16px;
-  font-size: 14px;
-  color: white;
-  // border-radius: 5px;
-  font-family: poppins;
+  font-size: 16px;
 }
 .error_button:hover {
-  background-color: #8c9291 !important;
-}
-.error_main_container {
-  // height: 100vh;
-}
-.page_not_found_main_container {
-  // height: 90vh;
-}
-.error_img_container {
-  padding-right: 32px;
+  background-color: #8c9291;
 }
 
-@media only screen and (max-width: 1024px) {
-  .error_main_container {
-    // height: 65vh !important;
-  }
-}
 // Mobile Screen
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   .error_img_container img {
     width: 200px !important;
-    height: 230px !important;
+    height: 250px !important;
   }
   .error_content h4 {
     font-size: 28px !important;
-    margin: 4px !important;
   }
   .error_content p {
     font-size: 14px !important;
@@ -130,30 +106,5 @@
     margin-top: 1rem;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
-  }
-  .error_content p {
-    text-align: center !important;
-  }
-  .error_main_container {
-    // height: 50vh !important;
-  }
-  .page_not_found_main_container {
-    // height: 65vh !important;
-  }
-  .error_img_container {
-    padding: 0 !important;
-  }
-  .error_button {
-    font-size: 14px !important;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .error_main_container {
-    // height: 85vh !important;
-  }
-  .page_not_found_main_container {
-    // height: 85vh !important;
   }
 }
