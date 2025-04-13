@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, Offcanvas } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
-import logo from '../../public/assets/images/logo.png';
+import { FiCommand } from 'react-icons/fi';
+import logo from '../../../public/assets/images/logo.png';
 
 const MobileProductCategories = ({
   show,
@@ -16,20 +17,20 @@ const MobileProductCategories = ({
 }: any) => {
   return (
     <Offcanvas show={show} onHide={handleClose}>
-      <Offcanvas.Header closeButton>
+      <Offcanvas.Header closeButton className="py-0">
         <div className={''}>
           <Link href="/" legacyBehavior>
             <a>
-              <Image className="pb-2 mb-1" src={logo} alt="logo" width={250} />
+              <Image className="pb-2 mt-2" src={logo} alt="logo" width={250} />
             </a>
           </Link>
         </div>{' '}
       </Offcanvas.Header>
       <Offcanvas.Body>
-        <div className="d-flex ">
+        <div className="d-flex align-items-center">
           <input
             type="text"
-            className="form-control "
+            className="form-control rounded-5 border-secondary position-relative"
             name="search"
             id="search"
             placeholder={selectedLanguageData?.search_in}
@@ -37,11 +38,17 @@ const MobileProductCategories = ({
             onChange={(e: any) => setSearchTerm(e.target.value)}
             required
           />
-          <button className="border-0 text-secondary" type="submit" onClick={handleSearch}>
+          <button
+            className="input-group-text border-0 bg-transparent text-secondary position-absolute"
+            type="submit"
+            onClick={handleSearch}
+            style={{ right: '20px' }}
+          >
             <FaSearch />
           </button>
         </div>
-        <div className="nav-sidebar">
+
+        <div className="nav-sidebar mt-3">
           <Accordion>
             {navbarData?.length > 0 &&
               navbarData?.map((itemL1: any, indexL1: number) => (
